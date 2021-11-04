@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task 1</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <style>
+            body{
+                background: #948E99;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #2E1437, #948E99);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #2E1437, #948E99); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class="container">
+            <button class="btn btn-block btn-primary" id="view-btn">View</button>
+            <div id="table-view"></div>
+        </div>
+        <script type="text/javascript">
+            
+
+            const BtnView=document.getElementById("view-btn");
+            
+            BtnView.addEventListener('click',function(){
+                let tableCell=document.createElement("th");
+                let tableCellTextNode =document.createTextNode("ID");
+                tableCell.appendChild(tableCellTextNode);
+                let tableRow=document.createElement("tr");
+                tableRow.appendChild(tableCell);
+                tableCell=document.createElement("th");
+                tableCellTextNode=document.createTextNode("NAME");
+                tableCell.appendChild(tableCellTextNode);
+                tableRow.appendChild(tableCell);
+                let table=document.createElement("table");
+                table.appendChild(tableRow);
+
+                tableRow=document.createElement("tr");
+                tableCell=document.createElement("td");
+                tableCellTextNode=document.createTextNode("1");
+                tableCell.appendChild(tableCellTextNode);
+                tableRow.appendChild(tableCell);
+                tableCell=document.createElement("td");
+                tableCellTextNode=document.createTextNode("Hammad");
+                tableCell.appendChild(tableCellTextNode);
+                tableRow.appendChild(tableCell);
+                table.appendChild(tableRow);
+
+                const tableViewDiv=document.getElementById("table-view");
+                tableViewDiv.appendChild(table);
+                table.style.border="3px solid Red";
+                table.style.backgroundColor="pink";
+                table.className="table";
+            })
+        </script>
+    </body>
+</html>

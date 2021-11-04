@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="org.sql.Modals.TransactionsEntity" table="transactions" schema="banking_system_wallet">
+        <id name="id">
+            <column name="id" sql-type="int"/>
+        </id>
+        <property name="transDate">
+            <column name="trans_date" sql-type="datetime"/>
+        </property>
+        <property name="transAmount">
+            <column name="trans_amount" sql-type="double" precision="-1"/>
+        </property>
+        <property name="transFromAccId">
+            <column name="trans_from_acc_id" sql-type="int"/>
+        </property>
+        <property name="transToAccId">
+            <column name="trans_to_acc_id" sql-type="int"/>
+        </property>
+        <property name="transType">
+            <column name="trans_type" sql-type="varchar(45)" length="45"/>
+        </property>
+        <property name="accountNumber">
+            <column name="account_number" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="accountHolderName">
+            <column name="account_holder_name" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="bankName">
+            <column name="bank_name" sql-type="varchar(255)" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

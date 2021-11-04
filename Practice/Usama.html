@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deliciously Simple</title>
+
+    <style>
+        h1 {
+            color: darkslategray;
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+            background-color: lightcyan;
+            font-style: italic;
+        }
+
+        .Slogan {
+            color: darkslategray;
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+        }
+
+        .MenuBar {
+            background-color: lightcyan;
+            text-align: center;
+            
+        }
+
+        .MenuBar nav button{
+            font-size: 16px;
+            font-family: 'Times New Roman', Times, serif;
+            padding: 10px;
+            background-color: lightcyan;
+            border-color: lightcyan;
+            border-style: hidden;
+            cursor: pointer;
+        }
+
+        div.MenuBar nav button:hover{
+            background-color: red;
+            color: white;
+        }
+        div.MenuBar nav button:focus{
+            background-color: yellow;
+            color: white;
+            outline: none;
+        }
+        .LoginArea {
+            background-color: rgba(237, 237, 237, .80);
+            border-radius: 20px;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .LoginArea form fieldset{
+            border-radius: 10px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .LoginArea form fieldset legend{
+            text-align: center;
+            border-radius: 20px;
+            
+        }
+
+        .TextBox {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 14px;
+            margin: 5px;
+            align-items: center;
+            justify-content: center;
+            
+        }
+
+    </style>
+</head>
+    <h1>Deliciously Simple</h1>
+    <p class="Slogan">A tasteful Simple theme based on Html and CSS</p>
+    <div class="MenuBar">
+        <nav>
+        <button>Home</button>
+        <button>About</button>
+        <button>Theme</button>
+        <button>Categories</button>
+        <button>Settings</button>
+        </nav>
+    </div>
+    <hr role="separator">
+    <div class="LoginArea">
+        <form action="blank" method="GET">
+            <fieldset>
+                <legend>Login</legend>
+                <nav style="content: none;">
+                    <input class="TextBox" placeholder="Username">
+                    <br>
+                    <input class="TextBox" placeholder="Password" type="password">
+                    <br>
+                    <input class="TextBox" type="checkbox">Remember Password
+                    <br>
+                    <button>Login</button>
+                </nav>
+            </fieldset>
+        </form>
+    </div>
+
+<body>
+
+</body>
+</html>

@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TicTakToe</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="fontawesome-free-5.15.1-web/fontawesome-free-5.15.1-web/css/all.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <style>
+            .background{
+                background: url("img1.jpg") no-repeat center center fixed;
+                background-size: cover;
+            }
+            table{
+                border: 2px rgb(221, 217, 217) solid;
+            }
+            table tr td {
+                width: 80px;
+                height: 80px;
+            }
+            table tr td:hover{
+                background-color: yellow;
+            }
+        </style>
+    </head>
+    <body class="bg-warning mt-5">
+          <div class="container background py-5">
+            <div class="mx-5 d-flex align-items-center justify-content-center ">
+                <div class="py-2 d-flex align-items-center justify-content-center bd-highlight">
+                    <div class="table-responsive bg-primary">
+                        <table class="table table-bordered">
+                          <tr scope="row">
+                                <td id="1" scope="col"></td>
+                                <td id="2" scope="col"></td>
+                                <td id="3" scope="col"></td>
+                          </tr>
+                          <tr scope="row">
+                                <td id="4" scope="col"></td>
+                                <td id="5" scope="col"></td>
+                                <td id="6" scope="col"></td>
+                          </tr>
+                          <tr scope="row">
+                                <td id="7" scope="col"></td>
+                                <td id="8" scope="col"></td>
+                                <td id="9" scope="col"></td>
+                          </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="row " style="text-align: center;">
+            <div class="col-12 mt-3">
+                <h1>The Result is</h1>
+            </div>
+            <div class="col-12 mt-3">
+                <h1 id="output" class="btn-outline-danger"></h1>
+            </div>
+        </div>
+          <script>
+              let matrix=[[-1,-1,-1],[-1,-1,-1],[-1,-1,-1]];
+              let currentPlayer=0;
+              let status=false;
+              function horizontalCheck(i){
+                return matrix[i][0]==currentPlayer&&matrix[i][1]==currentPlayer&&matrix[i][2]==currentPlayer;
+              }
+              function verticalCheck(i){
+                return matrix[0][i]==currentPlayer&&matrix[1][i]==currentPlayer&&matrix[2][i]==currentPlayer;
+              }
+              function leftDiagonalCheck(i){
+                return matrix[0][0]==currentPlayer&&matrix[1][1]==currentPlayer&&matrix[2][2]==currentPlayer;
+              }
+              function rightDiagonalCheck(i){
+                return matrix[0][2]==currentPlayer&&matrix[1][1]==currentPlayer&&matrix[2][0]==currentPlayer;
+              }
+              function resetAndShowStatus()
+              {
+                matrix=[[-1,-1,-1],[-1,-1,-1],[-1,-1,-1]];
+                let output1=document.getElementById("output");
+                if (status==true) {
+                    output1.innerText="Draw";
+                }
+                else if (currentPlayer==0) {
+                    output1.innerText="Player 1 Win";
+                }
+                else
+                {
+                    output1.innerText="Player 2 Win";
+                }
+                let arr= ["1","2","3","4","5","6","7","8","9"]
+                for (let index = 0; index < 10; index++) {
+                    arr[index]=document.getElementById(arr[index]);
+                }
+                for (let index = 0; index < 10; index++) {
+                    arr[index].style.background="none";
+                }
+              }
+
+
+              let loc1=document.getElementById("1");
+              loc1.addEventListener('click',function(){
+                  if(matrix[0][0]==-1)
+                  {
+                    matrix[0][0]=currentPlayer;
+                    if(currentPlayer==0)
+                    {
+                        loc1.style.background=`url("tick.png") no-repeat center`;
+                    }
+                    else
+                    {
+                        loc1.style.background=`url("cross.png") no-repeat center`;
+                    }
+                    loc1.style.backgroundSize = `cover`;
+                    if (horizontalCheck(0)||verticalCheck(0)||leftDiagonalCheck(0)) {
+                        resetAndShowStatus();    
+                    }
+                    else
+                    {
+                        status=true;
+                        for(let i =0 ; i<matrix.length;i++)
+                        {
+                            for (let j=0;j<3;j++)
+                            {
+                                if(matrix[i][j]==-1)
+                                {
+                                    status=false;
+                                    i=matrix.length;
+                                    j=matrix[0].length;
+                                }
+                            }
+                        }
+                        if (status==true) {
+                            resetAndShowStatus();
+                        }
+                    }
+                    currentPlayer=(currentPlayer+1)%2;
+                  }
+              });
+
+              let loc2=document.getElementById("2");
+              loc2.addEventListener('click',function(){
+                  if(matrix[0][1]==-1)
+                  {
+                    matrix[0][1]=currentPlayer;
+                    if(currentPlayer==0)
+                    {
+                        loc2.style.background=`url("tick.png") no-repeat center`;
+                    }
+                    else
+                    {
+                        loc2.style.background=`url("cross.png") no-repeat center`;
+                    }
+                    loc2.style.backgroundSize = `cover`;
+                    if (horizontalCheck(0)||verticalCheck(1)) {
+                        resetAndShowStatus();    
+                    }
+                    else
+                    {
+                        status=true;
+                        for(let i =0 ; i<3;i++)
+                        {
+                            for (let j=0;j<3;j++)
+                            {
+                                if(matrix[i][j]==-1)
+                                {
+                                    status=false;
+                                    i=matrix.length;
+                                    j=matrix[0].length;
+                                }
+                            }
+                        }
+                        if (status==true) {
+                            resetAndShowStatus();
+                        }
+                    }
+                    currentPlayer=(currentPlayer+1)%2;
+                  }
+              });
+
+              let loc3=document.getElementById("3");
+              loc3.addEventListener('click',function(){
+                  if(matrix[0][2]==-1)
+                  {
+                    matrix[0][2]=currentPlayer;
+                    if(currentPlayer==0)
+                    {
+                        loc3.style.background=`url("tick.png") no-repeat center`;
+                    }
+                    else
+                    {
+                        loc3.style.background=`url("cross.png") no-repeat center`;
+                    }
+                    loc3.style.backgroundSize = `cover`;
+                    if (horizontalCheck(0)||verticalCheck(2)||rightDiagonalCheck(0)) {
+                        resetAndShowStatus();    
+                    }
+                    else
+                    {
+                        status=true;
+                        for(let i =0 ; i<matrix.length;i++)
+                        {
+                            for (let j=0;j<3;j++)
+                            {
+                                if(matrix[i][j]==-1)
+                                {
+                                    status=false;
+                                    i=matrix.length;
+                                    j=matrix[0].length;
+                                }
+                            }
+                        }
+                        if (status==true) {
+                            resetAndShowStatus();
+                        }
+                    }
+                    currentPlayer=(currentPlayer+1)%2;
+                  }
+              });
+
+              let loc4=document.getElementById("4");
+              loc4.addEventListener('click',function(){
+                  if(matrix[1][0]==-1)
+                  {
+                    matrix[1][0]=currentPlayer;
+                    if(currentPlayer==0)
+                    {
+                        loc4.style.background=`url("tick.png") no-repeat center`;
+                    }
+                    else
+                    {
+                        loc4.style.background=`url("cross.png") no-repeat center`;
+                    }
+                    loc4.style.backgroundSize = `cover`;
+                    if (horizontalCheck(1)||verticalCheck(0)) {
+                        resetAndShowStatus();    
+                    }
+                    else
+                    {
+                        status=true;
+                        for(let i =0 ; i<3;i++)
+                        {
+                            for (let j=0;j<3;j++)
+                            {
+                                if(matrix[i][j]==-1)
+                                {
+                                    status=false;
+                                    i=matrix.length;
+                                    j=matrix[0].length;
+                                }
+                            }
+                        }
+                        if (status==true) {
+                            resetAndShowStatus();
+                        }
+                    }
+                    currentPlayer=(currentPlayer+1)%2;
+                  }
+              });
+
+              let loc5=document.getElementById("5");
+              loc5.addEventListener('click',function(){
+                  if(matrix[1][1]==-1)
+                  {
+                    matrix[1][1]=currentPlayer;
+                    if(currentPlayer==0)
+                    {
+                        loc5.style.background=`url("tick.png") no-repeat center`;
+                    }
+                    else
+                    {
+                        loc5.style.background=`url("cross.png") no-repeat center`;
+                    }
+                    loc5.style.backgroundSize = `cover`;
+                    if (horizontalCheck(1)||verticalCheck(1)||leftDiagonalCheck(0)||rightDiagonalCheck(0)) {
+                        resetAndShowStatus();    
+                    }
+                    else
+                    {
+                        status=true;
+                        for(let i =0 ; i<3;i++)
+                        {
+                            for (let j=0;j<3;j++)
+                            {
+                                if(matrix[i][j]==-1)
+                                {
+                                    status=false;
+                                    i=matrix.length;
+                                    j=matrix[0].length;
+                                }
+                            }
+                        }
+                        if (status==true) {
+                            resetAndShowStatus();
+                        }
+                    }
+                    currentPlayer=(currentPlayer+1)%2;
+                  }
+              });
+
+              let loc6=document.getElementById("6");
+              loc6.addEventListener('click',function(){
+                  if(matrix[1][2]==-1)
+                  {
+                    matrix[1][2]=currentPlayer;
+                    if(currentPlayer==0)
+                    {
+                        loc6.style.background=`url("tick.png") no-repeat center`;
+                    }
+                    else
+                    {
+                        loc6.style.background=`url("cross.png") no-repeat center`;
+                    }
+                    loc6.style.backgroundSize = `cover`;
+                    if (horizontalCheck(1)||verticalCheck(2)) {
+                        resetAndShowStatus();    
+                    }
+                    else
+                    {
+                        status=true;
+                        for(let i =0 ; i<3;i++)
+                        {
+                            for (let j=0;j<3;j++)
+                            {
+                                if(matrix[i][j]==-1)
+                                {
+                                    status=false;
+                                    i=matrix.length;
+                                    j=matrix[0].length;
+                                }
+                            }
+                        }
+                        if (status==true) {
+                            resetAndShowStatus();
+                        }
+                    }
+                    currentPlayer=(currentPlayer+1)%2;
+                  }
+              });
+
+              let loc7=document.getElementById("7");
+              loc7.addEventListener('click',function(){
+                  if(matrix[2][0]==-1)
+                  {
+                    matrix[2][0]=currentPlayer;
+                    if(currentPlayer==0)
+                    {
+                        loc7.style.background=`url("tick.png") no-repeat center`;
+                    }
+                    else
+                    {
+                        loc7.style.background=`url("cross.png") no-repeat center`;
+                    }
+                    loc7.style.backgroundSize = `cover`;
+                    if (horizontalCheck(2)||verticalCheck(0)||rightDiagonalCheck(0)) {
+                        resetAndShowStatus();    
+                    }
+                    else
+                    {
+                        status=true;
+                        for(let i =0 ; i<matrix.length;i++)
+                        {
+                            for (let j=0;j<3;j++)
+                            {
+                                if(matrix[i][j]==-1)
+                                {
+                                    status=false;
+                                    i=matrix.length;
+                                    j=matrix[0].length;
+                                }
+                            }
+                        }
+                        if (status==true) {
+                            resetAndShowStatus();
+                        }
+                    }
+                    currentPlayer=(currentPlayer+1)%2;
+                  }
+              });
+
+              let loc8=document.getElementById("8");
+              loc8.addEventListener('click',function(){
+                  if(matrix[2][1]==-1)
+                  {
+                    matrix[2][1]=currentPlayer;
+                    if(currentPlayer==0)
+                    {
+                        loc8.style.background=`url("tick.png") no-repeat center`;
+                    }
+                    else
+                    {
+                        loc8.style.background=`url("cross.png") no-repeat center`;
+                    }
+                    loc8.style.backgroundSize = `cover`;
+                    if (horizontalCheck(2)||verticalCheck(1)) {
+                        resetAndShowStatus();    
+                    }
+                    else
+                    {
+                        status=true;
+                        for(let i =0 ; i<matrix.length;i++)
+                        {
+                            for (let j=0;j<3;j++)
+                            {
+                                if(matrix[i][j]==-1)
+                                {
+                                    status=false;
+                                    i=matrix.length;
+                                    j=matrix[0].length;
+                                }
+                            }
+                        }
+                        if (status==true) {
+                            resetAndShowStatus();
+                        }
+                    }
+                    currentPlayer=(currentPlayer+1)%2;
+                  }
+              });
+
+              let loc9=document.getElementById("9");
+              loc9.addEventListener('click',function(){
+                  if(matrix[2][2]==-1)
+                  {
+                    matrix[2][2]=currentPlayer;
+                    if(currentPlayer==0)
+                    {
+                        loc9.style.background=`url("tick.png") no-repeat center`;
+                    }
+                    else
+                    {
+                        loc9.style.background=`url("cross.png") no-repeat center`;
+                    }
+                    loc9.style.backgroundSize = `cover`;
+                    if (horizontalCheck(2)||verticalCheck(2)||leftDiagonalCheck(0)) {
+                        resetAndShowStatus();    
+                    }
+                    else
+                    {
+                        status=true;
+                        for(let i =0 ; i<matrix.length;i++)
+                        {
+                            for (let j=0;j<3;j++)
+                            {
+                                if(matrix[i][j]==-1)
+                                {
+                                    status=false;
+                                    i=matrix.length;
+                                    j=matrix[0].length;
+                                }
+                            }
+                        }
+                        if (status==true) {
+                            resetAndShowStatus();
+                        }
+                    }
+                    currentPlayer=(currentPlayer+1)%2;
+                  }
+              });
+          </script>
+    </body>
+</html>

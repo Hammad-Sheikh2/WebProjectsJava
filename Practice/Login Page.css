@@ -1,0 +1,9 @@
+.menu {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  list-style-type: none;
+  margin: 10px;
+  cursor: pointer;
+}
+/*# sourceMappingURL=Login Page.css.map */

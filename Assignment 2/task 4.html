@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task 4</title>
+        <style>
+            body{
+                margin: 0%;
+                padding: 0%;
+                background-color: rgba(15, 41, 12, 0.89);
+            }
+            .container{
+                margin: auto;
+                margin-top: 100px;
+                width: 70%;
+            }
+            form
+            {
+                margin: auto;
+            }
+            form fieldset
+            {
+                border-radius: 20px;
+            }
+            form fieldset legend
+            {
+                color: white;
+            }
+            form table
+            {
+                margin: auto;
+                border: none;
+                color: white;
+                text-align: left;
+            }
+            form table sup
+            {
+                color: red;
+            }
+            form table ul{
+                list-style-type: none;
+                display: inline;
+                margin-block-start: 0%;
+                margin-block-end: 0%;
+            }
+            form table ul li{
+                
+                display: inline;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <form >
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    <table>
+                        <tr>
+                            <td><label for="Name">Name<sup>*</sup></label></td>
+                            <td><input type="text" name="name" required="name"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="address">Address</label></td>
+                            <td><input type="text" name="address"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="zip-code">ZIP Code<sup>*</sup></label></td>
+                            <td><input type="text" name="zip-code" required="zip-code"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="country">Country<sup>*</sup></label></td>
+                            <td><select name="country" required="country">
+                                <option>PAKISTAN</option>
+                                <option>INDIA</option>
+                                <option>AUSTRAILIA</option>
+                                <option>CHINA</option>
+                            </select></td>
+                        </tr>
+                        <tr>
+                            <td><label for="gender">Gender<sup>*</sup></label></td>
+                            <td>
+                                <input type="radio" name="gender" required="gender">Male
+                                <input type="radio" name="gender" required="gender">Female
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="preferences">Preferences<sup>*</sup></label></td>
+                            <td>
+                                <input type="checkbox" name="preferences" required="preferences">Red
+                                <input type="checkbox" name="preferences" required="preferences">Green
+                                <input type="checkbox" name="preferences" required="preferences">Blue
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="phone">Phone<sup>*</sup></label></td>
+                            <td><input type="text" name="phone" required="phone"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="email">Email<sup>*</sup></label></td>
+                            <td><input type="email" name="email" required="email"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="password">Password( 6-8 characters )<sup>*</sup></label></td>
+                            <td><input type="password" name="password" required="password"></td></td>
+                        </tr>
+                        <tr>
+                            <td><label for="verifyPassword">Verify Password<sup>*</sup></label></td>
+                            <td><input type="password" name="verifyPassword" required="verifyPassword"></td>
+                        </tr>
+                        <tr>
+                            <td rowspan="1"></td>
+                            <td>
+                                <input type="submit">
+                                <input type="reset">
+                            </td>
+
+                        </tr>
+                    </table>
+                </fieldset>
+            </form>
+        </div>
+    </body>
+</html>

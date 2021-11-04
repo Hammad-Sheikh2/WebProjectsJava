@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task 1</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        
+    </head>
+    <body>
+        <div class="container ">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-lg-6" id="a1" style="background-color: rgb(253, 0, 106);height:300px ;">
+                            
+                        </div>
+                        <div class="col-lg-6" id="a2" style="background-color: rgb(19, 165, 0);height:300px ;">
+        
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-lg-6" id="a3" style="background-color: rgb(0, 67, 253);height:300px ;">
+        
+                        </div>
+                        <div class="col-lg-6" id="a4" style="background-color: rgb(236, 253, 0);height:300px ;">
+        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script> 
+            let a1=document.getElementById("a1");
+            let a2=document.getElementById("a2");
+            let a3=document.getElementById("a3");
+            let a4=document.getElementById("a4");
+            a1.addEventListener('click',function(){
+                a1.style.backgroundColor="rgb(255, 0, 234)";
+            })
+            a2.addEventListener('click',function(){
+                a2.style.backgroundColor="rgb(0, 255, 170)";
+            })
+            a3.addEventListener('click',function(){
+                a3.style.backgroundColor="rgb(0, 183, 255)";
+            })
+            a4.addEventListener('click',function(){
+                a4.style.backgroundColor="rgb(255, 115, 0)";
+            })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,97 @@
+body{
+    margin: 0%;
+    border: gray;
+    border-radius: 10px;
+    height: 100vh;
+}
+#main
+{
+    background-color: rgba(0, 0, 0, 0.247);
+    width: 100%;
+    height: 695px;
+}
+#Side-Menu
+{
+    background-color: rgba(231, 231, 231, 0.247);
+    width: 15%;
+    height: 695px;
+    float: left;
+    scroll-behavior: auto;
+    margin: 0%;
+}
+.Mono
+{
+    text-align: center;
+    margin: 0%;
+}
+.Mono img
+{
+    margin: 0%;
+    width: 100px;
+    height: 80px;
+    text-align: center;
+}
+
+.Mono img:hover
+{
+    
+}
+
+.User
+{
+    background-color: rgb(32, 32, 32);
+    width: 85%;
+    height: 695px;
+    float: right;
+    scroll-behavior: auto;
+}
+.search-box
+{
+    width: 100%;
+    height: 40px;
+}
+.search-txt
+{
+    outline: none;
+    background: none;
+    border: none;
+    width: 0%;
+    transition: 0.12s;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 5px;
+    font-size: 20px;
+}
+.search-btn
+{
+    color: red;
+    background-color: transparent;
+    transition: 0.12s;
+}
+.search-btn i
+{
+    width: 100px;
+    height: 100px;
+}
+.search-box:hover > .search-txt
+{
+    width: 500px;
+    line-height: 30px;
+    color: cornsilk;
+    background: rgb(94, 94, 94);
+    
+}
+.search-box:hover > .search-btn
+{
+    color: white;
+}
+
+
+.video-player video
+{
+    margin: 10px;
+    width: 70%;
+    height: 55%;
+    border: none;
+}
+

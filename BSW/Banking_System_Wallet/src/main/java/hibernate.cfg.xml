@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.url">jdbc:mysql://localhost:3306/banking_system_wallet</property>
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <!--<property name="connection.username">root</property>-->
+        <!--<property name="connection.password"></property>-->
+        <mapping class="org.sql.Modals.AccountsEntity"/>
+        <mapping resource="AccountsEntity.hbm.xml"/>
+        <mapping class="org.sql.Modals.CurrenciesEntity"/>
+        <mapping resource="CurrenciesEntity.hbm.xml"/>
+        <mapping class="org.sql.Modals.TransactionsEntity"/>
+        <mapping resource="TransactionsEntity.hbm.xml"/>
+        <mapping class="org.sql.Modals.UsersEntity"/>
+        <mapping resource="UsersEntity.hbm.xml"/>
+
+        <!-- DB schema will be updated if needed -->
+        <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->
+    </session-factory>
+</hibernate-configuration>

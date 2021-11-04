@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css"/>
+</head>
+<body>
+    <div class="container pt-3 text-center">
+        <h2 class="display-4">Registration Form</h2>
+        <div class="jumbotron  mx-auto text-center">
+            <div class="info-form ">
+                <form class="form justify-content-center">
+                    <div class="form-group justify-content-inline row">
+                        <label class="control-label col-sm-2" for="tbName">Name</label>
+                        <input class="form-control form-control-sm col-sm-10" placeholder="Name" type="text" id="tbName">
+                    </div>
+                    <div class="form-group justify-content-inline row">
+                        <label class="control-label col-sm-2" for="tbName">Email</label>
+                        <input class="form-control form-control-sm col-sm-10" placeholder="Email" type="text" id="tbEmail">
+                    </div>
+                    <div class="form-group justify-content-inline row">
+                        <label class="control-label col-sm-2" for="tbName">Password</label>
+                        <input class="form-control form-control-sm col-sm-10" placeholder="Password" type="password" id="tbPass">
+                    </div>
+                    <div class="form-group row">
+                        <label class="control-label col-sm-2" for="tbName">Degree</label>
+                        <select class="custom-select custom-select-sm col-sm-10" id="cbxDegree">
+                            <option selected>Choose...</option>
+                            <option value="1">Software Engineering</option>
+                            <option value="2">Computer science</option>
+                            <option value="3">IT</option>
+                        </select>
+                    </div>
+                    <div class="form-group row">
+                    <label class="col-2 col-form-label">Section</label>
+                    <div class="form-check form-check-inline">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="optradio">Morning
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="optradio">Afternoon
+                            </label>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-2 col-form-label">Subjects</label>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input" value="">Mathematics
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input" value="">Computer vision
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input" value="">AI
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input" value="">Web Engineering
+                            </label>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary col-sm-3">Save and Preview</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

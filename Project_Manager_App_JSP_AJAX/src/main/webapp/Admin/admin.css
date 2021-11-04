@@ -1,0 +1,32 @@
+body{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background: #9053c7;
+    background: -webkit-linear-gradient(-135deg, #669999, #009900);
+    background: -o-linear-gradient(-135deg, #669999, #009900);
+    background: -moz-linear-gradient(-135deg, #669999, #009900);
+    background: linear-gradient(-135deg, #669999, #009900);
+}
+.main-panel{
+    background: #FFFFFF;
+    border-radius: 30px;
+}
+.uc-panel{
+
+}
+.heading{
+    font-family: Lucida Handwriting;
+}
+.nav-menu button,li{
+    cursor: pointer;
+}
+.stats-table td{
+    padding: 5px;
+}

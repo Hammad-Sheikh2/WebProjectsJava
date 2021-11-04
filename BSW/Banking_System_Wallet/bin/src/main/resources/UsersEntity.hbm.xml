@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="org.sql.Modals.UsersEntity" table="users" schema="banking_system_wallet">
+        <id name="userId">
+            <column name="user_id" sql-type="int"/>
+        </id>
+        <property name="userName">
+            <column name="user_name" sql-type="varchar(255)"/>
+        </property>
+        <property name="userEmail">
+            <column name="user_email" sql-type="varchar(255)"/>
+        </property>
+        <property name="userNationalId">
+            <column name="user_national_id" sql-type="varchar(255)"/>
+        </property>
+        <property name="userContact">
+            <column name="user_contact" sql-type="varchar(255)"/>
+        </property>
+        <property name="userPassword">
+            <column name="user_password" sql-type="varchar(255)"/>
+        </property>
+        <property name="userAddress">
+            <column name="user_address" sql-type="varchar(600)" length="600"/>
+        </property>
+    </class>
+</hibernate-mapping>

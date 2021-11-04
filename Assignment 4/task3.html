@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task 3</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="all.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        
+
+    </head>
+    <body>
+        <div class="containter m-5 p-5">
+            <div class="col-12">
+                <label for="tempInput" style="color: red;">
+                    Enter Temperature in either Celcius or Farenheit
+                </label>
+                <input class="form-control" id="tempInput" type="number">
+            </div>
+            <div class="col-12">
+                <label for="tempOutput">
+                    Converted Temperature
+                </label>
+                <input class="form-control" id="tempOutput" type="number">
+            </div>
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6 mt-3">
+                        <button class="btn btn-block btn-success" id="CtoF">Convert C to F</button>
+                    </div>
+                    <div class="col-md-6 mt-3">
+                        <button class="btn btn-block btn-success" id="FtoC">Convert F to C</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const btnCtoF =document.getElementById("FtoC");
+            btnCtoF.addEventListener('click',function(){
+                let input=document.getElementById("tempInput").value;
+                let output=document.getElementById("tempOutput");
+                output.value=(5/9)*(input-32);
+            } );
+            const btnFtoC =document.getElementById("CtoF");
+            btnFtoC.addEventListener('click',function(){
+                let input1=document.getElementById("tempInput").value;
+                let output2=document.getElementById("tempOutput");
+                output2.value=(9/5)*input1+32;
+            } );
+        </script>
+    </body>
+</html>

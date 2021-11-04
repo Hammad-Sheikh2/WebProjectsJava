@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task 3</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    </head>
+    <body>
+        <div class="container ">
+            <div class="row">
+                <div class="col-12">
+                    <ul id="list"> 
+                        <li>Coffee</li>
+                        <li>Tea</li>
+                    </ul>
+                </div>
+                <div class="col-12">
+                    <p>Click the button to append an item to the end of the list</p>
+                    <button id="btn">Try It</button>
+                </div>
+            </div>
+        </div>
+        <script>
+            let btn=document.getElementById("btn");
+            btn.addEventListener('click',function(){
+                let list=document.getElementById("list");
+                let child =document.createElement("li");
+                child.innerHTML="Water";
+                list.appendChild(child);
+            });
+        </script>
+    </body>
+</html>
